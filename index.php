@@ -19,14 +19,14 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
 require_once __DIR__ .'/partial/head.php';
 require_once __DIR__ .'/partial/header.php';
 
-require_once __DIR__. '/class/Products.php';
-require_once __DIR__. '/class/PetGame.php';
-require_once __DIR__. '/class/PetBeds.php';
-require_once __DIR__. '/class/PetFood.php';
 
-$cuciiaMaxi = new Product('cuccia Maxi', 50, 'Faber Cucce', 'cuccia per cani');
+require_once __DIR__. '/class/products/PetBed.php';
+require_once __DIR__. '/class/products/PetFood.php';
+require_once __DIR__. '/class/products/PetGame.php';
 
-var_dump($cuciiaMaxi);
+$pappabuona = new PetFood('Pappissima', 2.5, 'royalCanin', 'scatolette', 'carne, piselli, carote, brododipollo,gelatina', '0-3 anni', 250, 'pappa per cuccioli senza additivi', 2022-12-11 );
+
+var_dump($pappabuona);
 
 ?>
 
