@@ -1,0 +1,85 @@
+<?php
+
+require_once __DIR__. '/User.php';
+
+class RegisteredUser extends User{
+  private $email;
+  private $password;
+  private $agreement;
+  private $discount = 0;
+
+  public function __construct( $_name, $_surname, $_phoneNum, $_paymentMethods, $_cardNumber, $_ordersList, $_shippingAdress, $_email, $_password){
+    
+    parent::__construct($_name, $_surname, $_phoneNum, $_paymentMethods, $_cardNumber, $_ordersList, $_shippingAdress);
+
+    $this->email = $_email;
+    $this->password = $_password;
+
+  }
+
+  //set
+
+  public function setName($_name){
+    $this->name = $_name;
+  }
+  public function setSurname($_surname){
+    $this->surname = $_surname;
+  }
+  public function setEmail($_email){
+    $this->email = $_email;
+  }
+
+  public function setPhoneNum($_phoneNum){
+    $this->phoneNum = $_phoneNum;
+  }
+
+  public function setPaymentMethods($_paymentMethods){
+    $this->paymentMethods = $_paymentMethods;
+  }
+
+  public function setCardNumber($_cardNumber){
+    $this->cardNumber = $_cardNumber;
+  }
+  //
+  public function setOrderList($_ordersList){
+    $this->ordersList = $_ordersList;
+  }
+
+  public function setShippingAdress($_shippingAdress){
+    $this->shippingAdress = $_shippingAdress;
+  }
+
+  //get
+
+  public function getName(){
+    $this->name;
+  }
+  public function getSurname(){
+    $this->surname;
+  }
+  public function getEmail(){
+    $this->email;
+  }
+
+  public function getPhoneNum(){
+    $this->phoneNum;
+  }
+
+  public function getPaymentMethods(){
+    $this->paymentMethods;
+  }
+
+  public function getCardNumber(){
+    $this->cardNumber;
+  }
+  //
+  public function getOrderList(){
+    $this->ordersList;
+  }
+
+  public function getShippingAdress(){
+    $this->shippingAdress;
+  }
+
+}
+?>

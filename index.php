@@ -10,11 +10,6 @@ BONUS:
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto).
 */
 
-//1- creo classe principale, per i prodotti FATTO
-
-//creo sottoclasse per il singolo type
-//Quindi creo la correlazione
-//li importo nell' index e provo ad inizializzare di prodotti
 
 require_once __DIR__ .'/partial/head.php';
 require_once __DIR__ .'/partial/header.php';
