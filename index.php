@@ -19,9 +19,7 @@ require_once __DIR__. '/class/products/PetBed.php';
 require_once __DIR__. '/class/products/PetFood.php';
 require_once __DIR__. '/class/products/PetGame.php';
 
-$pappabuona = new PetFood('Pappissima', 2.5, 'royalCanin', 'scatolette', 'carne, piselli, carote, brododipollo,gelatina', '0-3 anni', 250, 'pappa per cuccioli senza additivi', 2022-12-11 );
-
-var_dump($pappabuona);
+require_once __DIR__. '/data/db-shop.php';
 
 ?>
 
