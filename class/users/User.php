@@ -11,8 +11,6 @@ class User{
   private $password;
   protected $discount;
 
-  private $ordersList =[];
-
   public function __construct( $_name, $_surname, $_email ){
     $this->name = $_name;
     $this->surname = $_surname;

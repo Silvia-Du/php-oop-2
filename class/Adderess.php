@@ -7,27 +7,14 @@ trait Address{
   private $country;
   private $postal_code;
 
-  public function setStreetAndNum($_street){
+  public function setFullAddress($_street, $_street_number, $_city, $_country, $_postal_code){
     $this->street = $_street;
-  }
-
-  public function setStreetNum($_street_number){
     $this->street_number = $_street_number;
-  }
-
-  public function setCity($_city){
     $this->city = $_city;
-  }
-
-  public function setCountry($_country){
     $this->country = $_country;
-  }
-
-  public function setPostal_code($_postal_code){
     $this->postal_code = $_postal_code;
   }
   
-
   public function getFullAddress(){
     return "<ul>
               <li>Nome Prodotto: ". $this->street.' '. $this->street_number."</li>

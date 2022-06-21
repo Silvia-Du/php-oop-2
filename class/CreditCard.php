@@ -1,6 +1,6 @@
 <?php
 
-class CredtCard{
+class CreditCard{
   private $cardNumber;
   private $name;
   private $cvv;

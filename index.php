@@ -21,6 +21,7 @@ require_once __DIR__. '/class/products/PetGame.php';
 require_once __DIR__. '/class/users/User.php';
 
 require_once __DIR__. '/data/db-shop.php';
+require_once __DIR__. '/class/users/Customer.php';
 
 
 ?>
@@ -38,8 +39,16 @@ require_once __DIR__. '/data/db-shop.php';
 
     <?php endforeach; ?>
 
-
   </div>
+
+  <?php
+  $ugo = new User('Ugo', 'Deughi', 'ugodeughi@gmail.com');
+  $silvana = new User('Silvana', 'Desilvani', 'silvanade@hotmail.com');
+
+  $Mariolino =new Customer('Mariolino', 'De Mariolini', 'Mariolino@gmail.com');
+  var_dump($Mariolino);
+  $Mariolino->setCard('Maiolino', 1234123412341234, 2023, 8, 022);
+  ?>
 </main>
 <?php 
 
