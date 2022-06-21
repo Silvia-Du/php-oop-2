@@ -1,40 +1,73 @@
 <?php
 
-trait CredtCard{
-  private $cardExpiryDate;
-  private $checkExpiry = false;
+class CredtCard{
   private $cardNumber;
+  private $name;
+  private $cvv;
+  private $cardExpiry_Y;
+  private $cardExpiry_m;
+  private $isValidCard = false;
+
+  //constructor
+
+  public function __construct($_name, $_cardNumber, $_cardExpiry_Y, $_cardExpiry_m, $_cvv){
+
+    $this->name = $_name;
+    $this->cardNumber = $this->checkCardNumber($_cardNumber);
+    $this->cardExpiry_Y = $_cardExpiry_Y;
+    $this->cardExpiry_m = $_cardExpiry_m;
+    $this->checkExpiry($_cardExpiry_Y, $_cardExpiry_m);
+    $this->cvv = $this->checkCvv($_cvv);
+
+  }
 
 
+  //verifica del numero carta di credito
+  public function checkCardNumber($_cardNumber){
 
-  
-  public function setCardNumber($_cardNumber){
-    if($this->checkExpiry){
+    if( !is_numeric($_cardNumber) || strlen($_cardNumber) != 16 ){
+      throw new Exception('Numero di carta errato');
+    }else{
       $this->cardNumber = $_cardNumber;
-    }else{
-      echo 'Carta non valida, selezionare un\'altro metodo di pagamento';
+    }
+
+    return $_cardNumber;
+  }
+
+  //Verifica del CVV
+  public function checkCvv($_cvv){
+
+    if(!is_numeric($_cvv) || strlen(str_replace('0', 'A', $_cvv)) !=3 ){
+      throw new Exception('Numero CVV non valido');
+    }
+
+    return $_cvv;
+  }
+
+  //verifica della data di scadenza
+  public function checkExpiry($_cardExpiry_Y, $_cardExpiry_m){
+  
+    $today_y = date("Y");
+    $today_m = date("n");
+
+    if($today_y > $_cardExpiry_Y)
+    {
+      $this->isValidCard = false;
+    }
+
+    if($today_y == $_cardExpiry_Y){
+
+      if($today_m > $_cardExpiry_m){
+        $this->isValidCard = false;
+      }
+    }
+
+    if(!$this->isValidCard ){
+      throw new Exception('Carta di credito scaduta');
     }
 
   }
 
-  
-  public function setcardExpiry($_cardExpiryDate){
-
-
-    $diff = date_diff( date_create($_cardExpiryDate) ,  date_create(date('Y-m-d')) );
-    $differenza = (int) $diff->format("%R%a");
-
-    if($differenza >0 ){
-      $this->checkExpiry = true;
-    }else{
-      $this->checkExpiry = false;
-    }
-  }
-
-  
-  public function getCardNumber(){
-    $this->cardNumber;
-  }
 }
 
 ?>

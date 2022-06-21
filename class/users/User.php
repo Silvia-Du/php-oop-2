@@ -1,12 +1,7 @@
 <?php
 
-require_once __DIR__. '/../Adderess.php';
-require_once __DIR__. '/../CreditCard.php';
 
 class User{
-
-  use Address;
-  use CredtCard;
   
   private $name;
   private $surname;
@@ -14,6 +9,7 @@ class User{
 
   private $subscription = false;
   private $password;
+  protected $discount;
 
   private $ordersList =[];
 
@@ -21,6 +17,7 @@ class User{
     $this->name = $_name;
     $this->surname = $_surname;
     $this->email = $_email;
+    $this->discount = $this->setDiscount();
 
   }
 
@@ -37,21 +34,23 @@ class User{
     $this->email = $_email;
   }
 
-  public function setSubscription($_subscription){
+  public function setSubscription($_subscription, $_password){
 
-    if($this->password != null){
-      $this->subscription = $_subscription;
+    if(strlen($_password) > 8 && $_subscription == true)
+    $this->password = $_password;
+    $this->subscription = $_subscription;
+
+  }
+
+
+  private function setDiscount(){
+    if($this->subscription){
+      return 20;
+    }else{
+      return 0;
     }
   }
-
-  public function setPword($_password){
-
-    if(strlen($_password) > 8 )
-    $this->password = $_password;
-  }
-
-
-  //
+  
   public function setOrderList($_ordersList){
     $this->ordersList = $_ordersList;
   }
