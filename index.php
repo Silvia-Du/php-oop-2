@@ -18,13 +18,27 @@ require_once __DIR__ .'/partial/header.php';
 require_once __DIR__. '/class/products/PetBed.php';
 require_once __DIR__. '/class/products/PetFood.php';
 require_once __DIR__. '/class/products/PetGame.php';
+require_once __DIR__. '/class/users/User.php';
 
 require_once __DIR__. '/data/db-shop.php';
 
 ?>
 
 <main>
-  <div class="container debug">M</div>
+  <div class="container debug">
+    <?php foreach($products as $product): ?>
+
+      <div class="product">
+        <h4><?php echo $product->getName() ?></h4>
+        <p><?php echo $product->getBrand() ?></p>
+        <p><?php echo $product->getPrice() ?></p>
+        <p><?php echo $product->getGenre() ?></p>
+      </div>
+
+    <?php endforeach; ?>
+
+
+  </div>
 </main>
 
 <?php 

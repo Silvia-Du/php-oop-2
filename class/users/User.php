@@ -110,20 +110,4 @@ class User{
 
 }
 
-
-$date1=date_create("2013-03-15");
-$date2=date_create("2022-06-20");
-$diff=date_diff($date1,$date2);
-// echo $diff->format("%R%a");
-
-$differenza = (int) $diff->format("%R%a");
-// echo (int) $diff->format("%R%a");
-// echo intval($diff->format("%R%a"));
-
-echo $differenza;
-if($differenza > 0){
-  echo 'numero';
-}else{
-  echo 'stringa';
-}
 ?>
