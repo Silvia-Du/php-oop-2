@@ -7,6 +7,7 @@ class User{
 
   use Address;
   use CredtCard;
+  
   private $name;
   private $surname;
   private $email;
