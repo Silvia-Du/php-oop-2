@@ -22,6 +22,14 @@ require_once __DIR__. '/class/users/User.php';
 
 require_once __DIR__. '/data/db-shop.php';
 
+
+$var = '002';
+echo explode('', $var);
+echo str_replace('0', 'A', $var);
+var_dump($ugo);
+
+
+
 ?>
 
 <main>
@@ -40,7 +48,6 @@ require_once __DIR__. '/data/db-shop.php';
 
   </div>
 </main>
-
 <?php 
 
 require_once __DIR__. '/partial/footer.php'

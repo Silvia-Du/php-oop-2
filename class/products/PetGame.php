@@ -8,8 +8,6 @@ class PetGame extends Product{
   private $madeIn;
   private $disclimer;
  
-
-
   public function __construct($_name, $_price, $_brand, $_genre, $_materials , $_madeIn, $_disclimer){
 
     parent::__construct( $_name, $_price, $_brand, $_genre );
