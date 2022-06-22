@@ -6,7 +6,7 @@ class CreditCard{
   private $cvv;
   private $cardExpiry_Y;
   private $cardExpiry_m;
-  private $isValidCard = false;
+  private $isValidCard = true;
 
   //constructor
 
@@ -36,12 +36,19 @@ class CreditCard{
 
   //Verifica del CVV
   public function checkCvv($_cvv){
+    echo $_cvv;
+    echo explode('', $_cvv);
+    echo str_repeat('0', 'A', $_cvv);
 
-    if(!is_numeric($_cvv) || strlen(str_replace('0', 'A', $_cvv)) !=3 ){
-      throw new Exception('Numero CVV non valido');
-    }
+    // echo is_numeric($_cvv);
 
-    return $_cvv;
+    // if(!is_numeric($_cvv) || strlen(str_replace('0', 'A', $_cvv)) !=3 ){
+    //   throw new Exception('Numero CVV non valido');
+    // }else{
+    //   $this->cvv = $_cvv;
+    // }
+
+    // return $_cvv;
   }
 
   //verifica della data di scadenza

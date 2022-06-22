@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__. '/User.php';
-require_once __DIR__. '/../Order.php';
+require_once __DIR__. '/../CreditCard.php';
 require_once __DIR__. '/../Adderess.php';
 require_once __DIR__. '/../Order.php';
 
@@ -9,15 +9,16 @@ require_once __DIR__. '/../Order.php';
 
   use Address;
   private $card;
-  private $cart;
+  protected $cart;
   private $order;
 
   public function setCard($_name, $_cardNumber, $_cardExpiry_Y, $_cardExpiry_m, $_cvv){
 
     try{
       $this->card = new CreditCard($_name, $_cardNumber, $_cardExpiry_Y, $_cardExpiry_m, $_cvv);
+
     }catch(Exception $e){
-      echo $e->getMessage();
+      echo 'errore : ' . $e->getMessage();
     }
   }
 
@@ -25,10 +26,10 @@ require_once __DIR__. '/../Order.php';
     $this->cart = $products;
   }
 
-  // private function setOrder(){
+  public function createOrder(){
 
-  //   $this->order = new Order($_name, $_surname, $_shippingAdress, $_discount, $_orderObjects);
-  // }
+    $this->order = new Order($this->name, $this->surname,$this->discount, $this->getFullAddress(),  $this->cart);
+  }
 
  }
 

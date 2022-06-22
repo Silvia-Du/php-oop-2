@@ -3,8 +3,8 @@
 
 class User{
   
-  private $name;
-  private $surname;
+  protected $name;
+  protected $surname;
   private $email;
 
   private $subscription = false;
