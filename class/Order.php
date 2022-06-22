@@ -1,19 +1,22 @@
 <?php
 
+require_once __DIR__.'/Adderess.php';
 
 class Order{
+
+  use Address;
   private $shippingAdress;
   private $discount = 0;
   private $name;
   private $surname;
   private $orderObjects = [];
 
-  public function __construct($_name, $_surname, $_shippingAdress, $_discount, $_orderObjects){
+  public function setOrder($_name, $_surname, $_discount, $_orderObjects){
     $this->name = $_name;
     $this->surname = $_surname;
-    $this->shippingAdress = $_shippingAdress;
+    $this->shippingAdress = $this->setShippingAdress();
     $this->discount = $_discount;
-    $this->orderObjects = $_orderObjects;
+    $this->orderObjects = $this->setOrderObjects();
   }
 
   public function getOrder(){
@@ -26,7 +29,17 @@ class Order{
             </ul>";
   }
 
+  public function setOrderObjects(...$_objects){
+    $this->cart = $_objects;
+  }
 
+  public function setShippingAdress(){
+    //qui non capisco come passare l'indirizzo dell'utente che diventerà lo stesso dell'ordine.
+  }
  
 }
+
+$ordine1 = new Order('simone', 'giacomino', 20, 'calzini');
+
+var_dump($ordine1);
 ?>
