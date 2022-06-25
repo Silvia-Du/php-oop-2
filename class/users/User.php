@@ -41,7 +41,7 @@ class User{
   }
 
 
-  private function setDiscount(){
+  public function setDiscount(){
     if($this->subscription){
       return 20;
     }else{
@@ -56,19 +56,19 @@ class User{
   //get
 
   public function getName(){
-    $this->name;
+    return $this->name;
   }
   public function getSurname(){
-    $this->surname;
+    return $this->surname;
   }
 
   public function getEmail(){
-    $this->email;
+    return $this->email;
   }
 
   //
   public function getOrderList(){
-    $this->ordersList;
+    return $this->ordersList;
   }
 
 }

@@ -20,15 +20,7 @@ class Order{
     $this->orderObjects = $_orderObjects;
   }
 
-  public function getOrder(){
-    
-    return "<ul>
-              <li>Destinatario: ". $this->name.' '. $this->surname."</li>
-              <li>Indirizzo di spedizione: ". $this->shippingAdress ."</li>
-              <li>Sconto applicabile". $this->discount ."</li>
-              <li>Oggetti acquistati: ". $this->orderObjects ."</li>
-            </ul>";
-  }
+
 
 }
 

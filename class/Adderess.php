@@ -16,12 +16,12 @@ trait Address{
   }
   
   public function getFullAddress(){
-    return "<ul>
-              <li>Nome Prodotto: ". $this->street.' '. $this->street_number."</li>
-              <li>Codice: ". $this->city ."</li>
-              <li>Prezzo € ". $this->country ."</li>
-              <li>Descrizione: ". $this->postal_code ."</li>
-            </ul>";
+    return "
+              <p>Via: ". $this->street.' '. $this->street_number."</p>
+              <p>Città: ". $this->city ."</p>
+              <p>Paese:". $this->country ."</p>
+              <p>Codice postale: ". $this->postal_code ."</p>
+            ";
   }
 
 }

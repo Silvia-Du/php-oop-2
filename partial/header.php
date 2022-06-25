@@ -1,7 +1,7 @@
 
-<header class="debug d-flex justify-content-between align-items-center px-3">
+<header class="d-flex debug justify-content-between align-items-center px-3">
 
-  <h3>LogoNegozio</h3>
+  <h3>Pet Shop</h3>
 
   <ul class="d-flex">
     <li><a href="#">chi simao</a></li>

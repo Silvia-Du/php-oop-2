@@ -21,6 +21,14 @@ class CreditCard{
 
   }
 
+  public function getCreditCard(){
+    return "
+    <p>Intestatario: ".$this->name."</p>
+    <p>Sconto: ". $this->cardNumber ."</p>
+    <p>Indirizzo di spedizione". $this->cardExpiry_m .' '.$this->cardExpiry_Y  ."</p>
+  ";
+  }
+
 
   //verifica del numero carta di credito
   public function checkCardNumber($_cardNumber){
@@ -36,13 +44,6 @@ class CreditCard{
 
   //Verifica del CVV
   public function checkCvv($_cvv){
-    // $test = '02b';
-    // is_numeric($test);
-    // str_replace('0', 'A', $test);
-    // echo strlen($test);
-    // echo $test;
-
-    // echo is_numeric($_cvv);
 
     if(!is_numeric($_cvv)){
       throw new Exception('Numero CVV non valido(lettere nel numero)');
