@@ -36,19 +36,26 @@ class CreditCard{
 
   //Verifica del CVV
   public function checkCvv($_cvv){
-    echo $_cvv;
-    echo explode('', $_cvv);
-    echo str_repeat('0', 'A', $_cvv);
+    // $test = '02b';
+    // is_numeric($test);
+    // str_replace('0', 'A', $test);
+    // echo strlen($test);
+    // echo $test;
 
     // echo is_numeric($_cvv);
 
-    // if(!is_numeric($_cvv) || strlen(str_replace('0', 'A', $_cvv)) !=3 ){
-    //   throw new Exception('Numero CVV non valido');
-    // }else{
-    //   $this->cvv = $_cvv;
-    // }
+    if(!is_numeric($_cvv)){
+      throw new Exception('Numero CVV non valido(lettere nel numero)');
 
-    // return $_cvv;
+      if(strlen(str_replace('0', 'A', $_cvv)) !=3){
+
+        throw new Exception('Numero CVV non valido(troppo corto)');
+      }
+    }else{
+      $this->cvv = $_cvv;
+    }
+
+    return $_cvv;
   }
 
   //verifica della data di scadenza

@@ -35,11 +35,12 @@ require_once __DIR__. '/class/users/Customer.php';
   $silvana = new User('Silvana', 'Desilvani', 'silvanade@hotmail.com');
 
   $Mariolino =new Customer('Mariolino', 'De Mariolini', 'Mariolino@gmail.com');
-  $Mariolino->setCard('Maiolino', 1234123412341234, 2023, 8, 222);
-  $Mariolino->setCart($frontline,$frontline);
-  $Mariolino->setFullAddress('via',10,'citta','a',20);
-  $Mariolino->createOrder();
+  $Mariolino->setCard('Maiolino', 1234123412341234, 2023, 8, '002');
   var_dump($Mariolino);
+  die('fine');
+  $Mariolino->setCart($frontline,$frontline);
+  $Mariolino->setFullAddress('via Mariolina',10,'MarioliniTown', 'CountryMariolin', 10);
+  $Mariolino->createOrder();
   ?>
 </main>
 <?php 
